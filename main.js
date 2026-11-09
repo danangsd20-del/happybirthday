@@ -298,3 +298,12 @@ const resolveFetch = () => {
     resolve("Fetch done!");
   });
 };
+// Memaksa musik berputar begitu pengguna mengklik area mana saja di halaman web
+document.addEventListener('click', function() {
+    var audio = document.getElementById('music');
+    if (audio) {
+        audio.play().catch(function(error) {
+            console.log("Musik diblokir oleh browser:", error);
+        });
+    }
+}, { once: true }); // Menggunakan { once: true } agar fungsi klik ini hanya berjalan satu kali saja
