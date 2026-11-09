@@ -350,3 +350,19 @@ button:active {
     position: relative;
   }
 }
+/* --- KODE KHUSUS AGAR PAS DI LAYAR HP --- */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 14px;
+    overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri */
+  }
+
+  /* Memaksa kontainer utama dan canvas animasi agar pas di layar HP */
+  .container, canvas, #canvas, .canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 45vh !important; /* Membatasi tinggi animasi agar teks di atas tidak tergeser */
+    margin: 0 auto;
+  }
+}
